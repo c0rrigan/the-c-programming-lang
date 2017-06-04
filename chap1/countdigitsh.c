@@ -1,24 +1,17 @@
 #include <stdio.h>
 
 int main(){
-    int c,i,nwhite,nother,next;
+    int c,i,bign,j;
     int ndigit[10];
 
-    nwhite=nother=0;
-    next=1;
+    bign=0;
     for(i=0;i<10;++i)
 	ndigit[i]=0;
 
     while((c=getchar())!=EOF){
 	if(c>='0' && c<='9')
 	    ++ndigit[c-'0'];
-	else if(c==' '||c=='\n'||c=='\t')
-	    ++nwhite;
-	else
-	    ++nother;
     }
-    int bign;
-    int j;
     bign=ndigit[0];
     for(i=1;i<10;i++){
 	if(bign<ndigit[i])
