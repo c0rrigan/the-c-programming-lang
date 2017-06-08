@@ -27,9 +27,8 @@ int htoi(char s[]){
 }
 int power(int base,int n){
     int res=1;
-    while(n>0){
+    while(n-->0){
 	res*=base;
-	n--;
     }
     return res;
 }
