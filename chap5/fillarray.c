@@ -24,6 +24,8 @@ int getint(int *pn){
     sign = (c=='-')?-1:1;
     if(c=='+' || c=='-')
 	c=getch();
+    if(c==EOF || c=='\n')
+	ungetch(c);
     for(*pn = 0;isdigit(c);c=getch())
 	*pn = 10 * *pn + (c-'0');
     *pn *=sign;
